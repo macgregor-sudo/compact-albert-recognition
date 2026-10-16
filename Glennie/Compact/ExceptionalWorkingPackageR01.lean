@@ -1,0 +1,36 @@
+/- Aggregates local endpoints and exceptional robustness/reference-recognition gates.
+Companion results remain separate. -/
+module
+public import AlbertGeometry.IntrinsicGenerationStabilizersR01
+public import AlbertGeometry.IntrinsicLocalGenerationCapstoneR01
+public import AlbertGeometry.IntrinsicLocalGenerationWitnessR01
+public import AlbertGeometry.IntrinsicReadoutTransportR01
+public import Glennie.Compact.LocalOrbitQuotientR01
+public import Glennie.Compact.NativeWordBoundsR01
+public import Glennie.Compact.PositiveWord16BoundsR01
+public import Glennie.Compact.PositiveWord16DefinitionR01
+public import Glennie.Compact.PositiveWord16EqualityR01
+public import Glennie.Compact.PositiveWord16ErrorR01
+public import Glennie.Compact.PositiveWord192BoundsR01
+public import Glennie.Compact.PositiveWordBookkeepingR01
+public import Glennie.Compact.PositiveWordDefinitionR01
+public import Glennie.Compact.PositiveWordEndpointR01
+public import Glennie.Compact.PositiveWordEqualityR01
+public import Glennie.Compact.PositiveWordErrorR01
+public import Glennie.Compact.PositiveWordLayersR01
+public import Glennie.Compact.PositiveWordNearFlatR01
+public import Glennie.Compact.PositiveWordSignR01
+public import Glennie.Compact.ReadoutGenerationR01
+public import Glennie.Compact.ReadoutRobustnessR01
+public import Glennie.NativeGenerationComplexSectorR01
+public import Glennie.NativeGenerationCoordinatesR01
+public import Glennie.NativeGenerationEndpointR01
+public import Glennie.NativeGenerationHiddenActionsR01
+public import Glennie.NativeGenerationHiddenCompletionR01
+public import Glennie.NativeGenerationHiddenSpanR01
+public import Glennie.NativeGenerationPeirceTriangleR01
+public import Glennie.NativeGenerationStabilizersR01
+public import Glennie.NativeOrderedFrameGenerationR01
+public import Glennie.NativeQuadraticPositiveR01
+public import Glennie.NativeSquareConeR01
+public import Glennie.Compact.ExceptionalFiniteWordCapstoneR01

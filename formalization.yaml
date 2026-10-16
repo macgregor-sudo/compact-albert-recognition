@@ -1,0 +1,553 @@
+---
+version: v0.4
+project:
+  name: Finite Observations and Recognition of the Compact Albert Algebra
+  description: |-
+    Let J=H_3(O), the real algebra of 3×3 Hermitian matrices over the division octonions, with product a∘b=(ab+ba)/2 and diagonal trace T. A frame p=(p_0,p_1,p_2) consists of trace-one elements satisfying p_i∘p_i=p_i, p_i∘p_j=0 for i≠j, and p_0+p_1+p_2=1. For frames p,q,r, record the 27 pair traces T(p_i∘q_j), T(q_j∘r_k), T(r_k∘p_i), and 27 triple traces T((p_i∘q_j)∘r_k), for i,j,k∈{0,1,2}. How much do these traces determine?
+
+    Each trace list in some open neighborhood of the data with pair entries 1/3 and triple entries 1/9, in a fixed twenty-dimensional chart, determines exactly two equivalence classes. Equivalence means one product-and-trace-preserving real linear bijection acting on all nine labeled elements, without relabeling. The sign of the degree-nine scalar Phi distinguishes the classes. With x=p_2−p_0, y=q_2−q_0, z=r_2−r_0, define
+
+    B(a,b) = T(a∘b),
+    U_a(b) = 2a∘(a∘b)−(a∘a)∘b,
+    Phi(x,y,z) = B((U_x U_y−U_y U_x)z,U_z(x∘y)).
+
+    Phi's derivative uses Glennie's degree-eight vector polynomial.
+
+    For arbitrary x,y,z∈J, Phi≠0 implies that 1,x,y,z generate J.
+
+    Recognition starts from a homogeneous cubic N on finite-dimensional real normed E, with N(e)=1 and g_e=−(1/3)D²(log N)_e positive definite on all E. A supplied linear equivalence ker(DN_e)≃ker T (the trace-zero subspace), matching g_e to B/3 and full vector-valued curvature tensors, yields an Albert algebra equivalence.
+
+    Consider 27 fixed parenthesized products of a distinguished element and three chosen elements in a real inner-product space with bilinear multiplication. Exact matching with the Albert table of pairwise inner products, inner products of products with these expressions and full ambient squared product norms determines a unique isometric, product-preserving linear embedding of J onto the subspace they generate under products and linear combinations, preserving the distinguished element and chosen elements.
+
+    Further results give error bounds. All project exposition and Lean code are AI-generated under Robert MacGregor's direction. Robert is a non-mathematician and welcomes mathematical collaboration: macgregor@gmail.com. No novelty is asserted.
+  authors:
+  - name: Robert MacGregor
+  responsible_maintainers:
+  - name: Robert MacGregor
+  license: Apache-2.0
+repository:
+  role: substantive-development
+sources:
+- title: Unpublished notes on compact Albert reconstruction and finite observations
+  authors:
+  - name: Robert MacGregor
+  type: other
+  relationship: adapts
+  note: Selected material is adapted from these unpublished notes. They treat geometric
+    recognition and local whole-fiber classification as supplied inputs and develop
+    other symbolic consequences. Each selected Lean statement, including later additions,
+    has a direct source reference; no wholesale formalization of the notes is claimed.
+    The project exposition and Lean code are AI-generated under the named human director.
+  author_endorsement: participated
+- title: The Octonions
+  authors:
+  - name: John C. Baez
+  id: https://math.ucr.edu/home/baez/octonions/node12.html
+  type: paper
+  relationship: background
+  note: 'Expository source for the compact model, trace, determinant and reference
+    automorphisms: §§3.4 and 4.2; retained arXiv v4 pp.31–32,39–40. The package constructs
+    the needed native operations and transporters; no selected theorem identifies
+    the full abstract automorphism group with F4. Not the source of the inverse-curvature
+    or local two-orbit theorem.'
+  author_endorsement: n/a
+- title: Some identities valid in special Jordan algebras but not valid in all Jordan
+    algebras
+  authors:
+  - name: Charles M. Glennie
+  id: https://msp.org/pjm/1966/16-1/pjm-v16-n1-p05-p.pdf
+  type: paper
+  relationship: background
+  note: 'Classical degree-eight special-identity antecedent: §2, relation (8), p.56,
+    and degree-eight relation (9), p.57. Selected theorem 22 expresses Phi''s actual
+    full derivative by cyclic pairings with the degree-eight vector polynomial, in
+    McCrimmon''s introductory normalization. This does not attribute the derivative
+    identity, local compact-real orbit theorem, or generation criterion to Glennie''s
+    paper.'
+  author_endorsement: n/a
+- title: On Generators of the Algebra of Polynomial Invariants of Group F_4
+  authors:
+  - name: Alexander Iltyakov
+  id: https://www.maths.usyd.edu.au/u/ResearchReports/Algebra/Ilt/1997-4.html
+  type: paper
+  relationship: background
+  note: 'Classical invariant-theory background: Research Report 97-4, Proposition
+    2 and (16), pp.9–10; Corollary 2, p.10; Corollary 3 and Theorem 2, pp.17–18; closing
+    trace-zero remark, p.18. Algebraically closed characteristic-zero invariant rings
+    are distinct from local compact-real frame fibers. No selected theorem formalizes
+    the whole ring presentation or identifies Phi with omega. Checked via retained
+    primary-text extraction; original PostScript page-image confirmation remains limited.'
+  author_endorsement: n/a
+- title: A Taste of Jordan Algebras
+  authors:
+  - name: Kevin McCrimmon
+  id: https://galileoandeinstein.phys.virginia.edu/Elec_Mag/17_7410_Lectures/mccrimmon_jordan.pdf
+  type: book
+  relationship: background
+  note: 'Normalization reference for the adopted Glennie vector: §0.1, pp.5–6; compare
+    B.5.2, p.469, whose final two-tad input doubles the convention. Also cited for
+    classical background: Jordan–von Neumann–Wigner classification, §1.11 p.49; Shirshov–Cohn,
+    II.5.1.3 p.200 and B.4.3 p.468; Springer construction, II.4.2–4.3, through Tkachev''s
+    explicit account. The selected generation proof uses native pair reduction and
+    span arguments, and the selected curvature-recognition theorem is not attributed
+    to this book.'
+  author_endorsement: n/a
+- title: 'Rational invariants of three frames in the split Albert algebra: CubicJordan
+    formalization'
+  authors: []
+  id: https://github.com/macgregor-sudo/albert-frame-triple-invariants/blob/dd06ef5d423a0e4a5d814d2c221e999b98887ee1/AlbertLean/CubicJordan.lean
+  type: other
+  relationship: adapts
+  license: Apache-2.0
+  note: 'Prior Lean formalization: only the general CubicJordan implication is adapted
+    from rational to real scalar/API form; not a native compact Albert proof.'
+  author_endorsement: n/a
+- title: 'Albert Algebras over Commutative Rings: The Last Frontier of Jordan Systems'
+  authors:
+  - name: Skip Garibaldi
+  - name: Holger P. Petersson
+  - name: Michel L. Racine
+  id: https://garibaldibros.com/linked-files/GPR-draft.pdf
+  type: book
+  relationship: background
+  note: January 19, 2026 author draft, §37.1, Proposition 37.2(b) and Proposition
+    37.4, printed pp.362–365. Explicitly credited as proof guidance in Native/TraceOneU.lean
+    for the supporting rank-one quadratic-operator identity. Native proof uses the
+    cubic residual, with conventions translated. Not a formalization of the entire
+    book; no book text or proof code is copied.
+  author_endorsement: n/a
+- title: A Jordan Algebra Approach to the Cubic Eiconal Equation
+  authors:
+  - name: Vladimir G. Tkachev
+  id: https://arxiv.org/pdf/1211.7223v2
+  type: paper
+  relationship: background
+  note: 'Definition 2.1 and Proposition 2.1, pp.5–6: Springer construction with nondegenerate
+    trace pairing and adjoint identity. Provides a checked route to Springer/McCrimmon
+    attribution. Related classical reconstruction, not the selected pointwise full-curvature
+    inverse theorem.'
+  author_endorsement: n/a
+- title: Curvature of Hessian Manifolds
+  authors:
+  - name: Shun-ichi Amari
+  - name: John Armstrong
+  id: https://arxiv.org/pdf/1312.1103v1
+  type: paper
+  relationship: background
+  note: 'Proposition 1, p.4, equation (1): classical forward Hessian-curvature formula.
+    Context for the independently proved geometric adapter; not a one-point Albert
+    recognition theorem.'
+  author_endorsement: n/a
+- title: Properties of the Moduli Set of Complete Connected Projective Special Real
+    Manifolds
+  authors:
+  - name: David Lindemann
+  id: https://arxiv.org/pdf/1907.06791v1
+  type: paper
+  relationship: background
+  note: 'Lemma 3.11, p.21, equations (3.35)–(3.37): forward unit-level curvature formula.
+    Retained comparison accounts for normalization and sign. No global completeness
+    premise is imported and no inverse-curvature theorem is attributed to this source.'
+  author_endorsement: n/a
+- title: Hessian Potentials with Parallel Derivatives
+  authors:
+  - name: Roland Hildebrand
+  id: https://arxiv.org/pdf/1303.7366v1
+  type: paper
+  relationship: background
+  note: 'PDF labeled arXiv:1303.7366v1: Lemma 3.3 p.3; Theorem 3.9 p.6; Theorem 5.8
+    p.10. Parallel third derivative gives a Jordan-algebra relation; further parallelism/convexity
+    enters the symmetric-cone conclusion. Contextual recognition under different hypotheses,
+    not the selected unrestricted pointwise inverse.'
+  author_endorsement: n/a
+- title: On the Equiaffine Symmetric Hyperspheres
+  authors:
+  - name: Xingxiao Li
+  - name: Guosong Zhao
+  id: https://arxiv.org/pdf/1408.4317v1
+  type: paper
+  relationship: background
+  note: Definition 2.2 p.5; equation (4.1), Lemma 4.1 and Proposition 4.2 pp.16–17.
+    Related exceptional affine-symmetric classification assumes invariance of the
+    Fubini–Pick form. It does not supply unrestricted cubic recovery from one full-curvature
+    match.
+  author_endorsement: n/a
+- title: Parallel Submanifolds of Complex Space Forms II
+  authors:
+  - name: Hiroo Naitoh
+  id: https://doi.org/10.1017/S002776300002047X
+  type: paper
+  relationship: background
+  note: 'Nagoya Mathematical Journal 91 (1983), 119–149. Publisher PDF: Lemma 6.1
+    and equation (6.7), printed p.121; Theorem 6.3, printed p.123. Related Jordan
+    construction under parallel-submanifold hypotheses and resulting invariance; not
+    the selected pointwise inverse theorem.'
+  author_endorsement: n/a
+related_formalizations:
+- id: https://github.com/macgregor-sudo/albert-frame-triple-invariants/tree/dd06ef5d423a0e4a5d814d2c221e999b98887ee1
+  relationship: adapts
+  note: One Apache-2.0 licensed general CubicJordan implication is adapted into the
+    Solution closure; this source does not supply the native compact Albert proof.
+classification:
+  arxiv:
+  - math.RA
+  - math.DG
+  msc2020:
+  - 17C40
+  - 17C37
+  - 17C30
+status:
+  scope: Exactly the 23 declarations in comparator.json. The 23 selected statements passed a Linux
+    verification run on 16 October 2026 using Comparator, the default Lean kernel, NanoDa and
+    con-ron. The permitted axioms were propext, Classical.choice and Quot.sound. This release
+    changes only comments in the Lean sources from that run; all non-comment content is
+    unchanged. No new build or checker run is claimed for the revised files. Prose and
+    metadata are outside that proof check. No Palomar acceptance or independent human
+    mathematical review is claimed. Sorry counts exclude the 23 designated Challenge
+    specification holes and concern the selected Solution proof closures.
+  main_results:
+  - declaration: Glennie.SubmissionR03.q26_eq_iff_fullLedger_eq
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.division_free
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.score_eq_two_phi
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.atoms_generate_of_score
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.nearby_sign_rigidity
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.nearby_fibres_two_orbits
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.q20_eq_iff_fullLedger_eq
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.near_flat_scalar_margin
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.signed_readout_margin
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.finite_word_marked_recognition
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.local_q26_score_orbit_test
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.phi_nonzero_generation_stabilizer
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.compact_local_phi_margin
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.compact_feasible_element_recovery
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.compact_noisy_feasible_element_recovery
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.six_readout_displaced_generation
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.diagonalN_defect_response_radius
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.frame_noisy_diagonalN_defect_lower
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR03.frame_noisy_represented_defect_lower
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR04Quotient.admitted_orbit_quotient_homeomorph
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.SubmissionR04Intrinsic.intrinsic_local_reconstruction
+    file: Solution/R04IntrinsicUnifiedCandidate.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.Compact.GlennieFullDerivativeR01.hasFDerivAt_phiTriple
+    file: Glennie/Compact/GlennieFullDerivativeR01.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - declaration: Glennie.Compact.GlennieFullDerivativeR01.eq_top_of_fderiv_phiTriple_ne_zero
+    file: Glennie/Compact/GlennieFullDerivativeR01.lean
+    comparator_config: comparator.json
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+automation:
+  methods:
+  - method: agent
+    framework: OpenAI Codex; Anthropic Claude; Google Gemini abstract feedback
+    models:
+    - gpt-6-astra
+    - claude-opus-5
+    - Google Gemini 4 Argon (owner-reported label)
+    - Claude Fable 5 (owner-reported label)
+    tool_setup: Pinned Lean 4.35.0-rc2 and Mathlib 065356127b1dc0016f66b7283ce0ce2c4055aa55.
+      The verification record identifies the tested sources, tools, exports and checker
+      results.
+    prompting_notes: Retained records document contributions from OpenAI Codex and
+      Anthropic Claude to mathematical development, Lean work and review, and Google
+      Gemini feedback on an abstract. Recorded session labels include gpt-6-astra
+      for OpenAI advisory sessions and claude-opus-5 for an Anthropic prose-review
+      session. Robert MacGregor reports the additional model labels Google Gemini
+      4 Argon and Claude Fable 5. These owner-reported identifications supplement
+      the retained records. The labels are not independently verified serving versions,
+      and the retained records do not establish exact versions for every historical
+      contribution.
+  notes: All project exposition and Lean code are AI-generated under Robert MacGregor's
+    direction as a non-mathematician. AI systems drafted and repaired arguments, Lean
+    proofs, packaging and prose. Reused code and dependencies retain their own credits
+    and licenses. AI reviews examined source correspondence, mathematical scope and
+    attribution. No independent human mathematical review is claimed. Editorial review
+    is separate from formal verification.
+fidelity:
+  divergences: The formalized compact-real local conclusions use explicit normalization,
+    positivity, actual ordered frames and an admitted full-ledger neighborhood. The
+    constructed ambient equivalence is not required to agree with the supplied tangent
+    equivalence. Q26/full54 equivalence is only for actual ordered frames; score=2Phi
+    is algebraic and free of input-dependent denominators. There is no global exact-two
+    fiber theorem, label-permutation quotient, normalized middle-trace contrast, probability
+    semantics, or forced Lie-gluing premise. Sources concerning split/complex invariant
+    theory are background unless an exact compact adapter is separately proved.
+review:
+  status: agent-reviewed
+  reviewers:
+  - AI citation and Lean-alignment reviewer, 16 October 2026
+  - AI adversarial editorial reviewer, 16 October 2026
+  notes: AI reviews examined source correspondence, mathematical scope and attribution.
+    No independent human mathematical review is claimed. Editorial review is separate
+    from formal verification.
+alignment:
+  namespace: Glennie
+  statements:
+  - lean: Glennie.SubmissionR03.q26_eq_iff_fullLedger_eq
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Native Q26 equality iff full54 ledger equality for actual ordered frame
+      triples. No arbitrary scalar-array claim.
+  - lean: Glennie.SubmissionR03.division_free
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: The specified six-reading weighted score equals 2 * Phi, with no input-dependent
+      denominator or admissibility premise.
+  - lean: Glennie.SubmissionR03.score_eq_two_phi
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: The frame-encoder score equals twice Phi; this algebraic statement itself
+      does not require frame axioms.
+  - lean: Glennie.SubmissionR03.atoms_generate_of_score
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Nonzero native score suffices for the actual frame atoms to generate the
+      native unital algebra.
+  - lean: Glennie.SubmissionR03.nearby_sign_rigidity
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Same-sign native triples are related by a simultaneous product-and-trace
+      automorphism in the stated local admitted domain.
+  - lean: Glennie.SubmissionR03.nearby_fibres_two_orbits
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Every admitted nearby full54 fiber is exactly two disjoint native automorphism
+      orbits, with the existing continuous local sections.
+  - lean: Glennie.SubmissionR03.q20_eq_iff_fullLedger_eq
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: The retained Q20 readings are equivalent to full54 on actual ordered frames;
+      this is not a chart identity for arbitrary arrays.
+  - lean: Glennie.SubmissionR03.near_flat_scalar_margin
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: The strict native 1/27 signed-invariant margin applies to actual frames
+      whose full ledger lies in the supplied open neighborhood of the flat reference.
+  - lean: Glennie.SubmissionR03.signed_readout_margin
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Six noisy algebraic readings certify the correct positive or negative sign
+      under its strict error premise.
+  - lean: Glennie.SubmissionR03.finite_word_marked_recognition
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Exact 27-word Gram, mixed-product and product-square data yield the stated
+      unique marked generated copy; no ambient 27-dimensionality premise is added.
+  - lean: Glennie.SubmissionR03.local_q26_score_orbit_test
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: On actual nearby admitted triples, Q26 plus score sign characterizes one
+      simultaneous automorphism orbit.
+  - lean: Glennie.SubmissionR03.phi_nonzero_generation_stabilizer
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Nonzero native Phi supplies unital generation and trivial pointwise automorphism
+      stabilizer in its stated native scope.
+  - lean: Glennie.SubmissionR03.compact_local_phi_margin
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Positive sign margin on a compact subdomain within the admitted local region.
+  - lean: Glennie.SubmissionR03.compact_feasible_element_recovery
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Exact feasible recovery on the same compact admitted subdomain, modulo one
+      simultaneous automorphism.
+  - lean: Glennie.SubmissionR03.compact_noisy_feasible_element_recovery
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Noisy feasible recovery with the theorem's existential tolerance and same-subdomain
+      conditions.
+  - lean: Glennie.SubmissionR03.six_readout_displaced_generation
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Write Phi_observed = S_observed/2. Under the stated norm and displacement
+      premises and 6epsilon <= xi, sign, generation and stabilizer survive when 18R^8
+      delta < |Phi_observed|-xi.
+  - lean: Glennie.SubmissionR03.diagonalN_defect_response_radius
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Coordinatewise Euclidean approximate-product target obeys the stated all-input
+      Phi response bound under the theorem's norm and defect premises.
+  - lean: Glennie.SubmissionR03.frame_noisy_diagonalN_defect_lower
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Actual-frame noisy diagonal-target multiplication-defect lower bound under
+      the all-input defect premise.
+  - lean: Glennie.SubmissionR03.frame_noisy_represented_defect_lower
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: The analogous bound for a represented cyclic-trace target with explicit
+      product/pairing compatibility; no universal special-EJA instantiation.
+  - lean: Glennie.SubmissionR04Quotient.admitted_orbit_quotient_homeomorph
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: The exact admitted ordered-frame orbit quotient is homeomorphic to V × Bool
+      for one open V; no global quotient or label-permutation quotient.
+  - lean: Glennie.SubmissionR04Intrinsic.intrinsic_local_reconstruction
+    module: Solution.R04IntrinsicUnifiedCandidate
+    note: Main capstone. From a based cubic with N(e)=1, strict positive derivative
+      log-Hessian metric, and one metric/full vector-valued curvature tangent equivalence,
+      construct one ambient A and one local V. The result transports native norm,
+      unit, metric, raw pairing, trace, product, actual ambient connection and curvature;
+      on the same V it carries full54 two-orbit continuous sections, Q26/full54 equivalence
+      for actual source frames, division-free score 2Φ, Q26-plus-sign orbit completeness,
+      and admitted atom generation, stabilizer and derivation rigidity. It does not
+      assume A, a product, frames, or any local conclusion as an entrance premise.
+  - lean: Glennie.Compact.GlennieFullDerivativeR01.hasFDerivAt_phiTriple
+    module: Solution.R05DerivativeExtension
+    note: The literal native degree-nine Phi on the full Albert triple has the actual
+      continuous linear differential given by the three cyclic Glennie-vector pairings,
+      for arbitrary native inputs. For statements 22–23, main_results.file identifies
+      the defining file Glennie/Compact/GlennieFullDerivativeR01.lean, while alignment.module
+      identifies the public exporting root Solution.R05DerivativeExtension. That root
+      publicly imports Glennie.Compact.EasyFirstIntegratedR01, which publicly imports
+      the defining module; the declarations are not redefined in the exporting root.
+  - lean: Glennie.Compact.GlennieFullDerivativeR01.eq_top_of_fderiv_phiTriple_ne_zero
+    module: Solution.R05DerivativeExtension
+    note: For a real submodule containing the unit and closed under the native Jordan
+      product, membership of x,y,z and a nonzero actual full derivative of Phi at
+      that triple imply that the submodule is all of Albert. This is the forward unital-generation
+      implication only.
+acknowledgements: Mathlib and pinned Lean dependencies are credited in THIRD-PARTY-NOTICES.md.
+  The adapted CubicJordan source and retained Apache-2.0 notice are recorded there.
+  No claim of source-author endorsement is made.

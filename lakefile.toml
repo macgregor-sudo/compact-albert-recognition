@@ -1,0 +1,43 @@
+name = "compactGlennie"
+version = "0.1.0"
+keywords = ["math", "Albert algebra", "Glennie polynomial"]
+defaultTargets = ["Glennie"]
+moreLeanArgs = ["-j1", "-M3500"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+
+[[lean_lib]]
+name = "Glennie"
+globs = ["Glennie", "Glennie.+"]
+
+[[lean_lib]]
+name = "AlbertGeometry"
+globs = ["AlbertGeometry", "AlbertGeometry.+"]
+
+[[lean_lib]]
+name = "AlbertRecognition"
+globs = ["AlbertRecognition", "AlbertRecognition.+"]
+
+[[lean_lib]]
+name = "GenericCubic"
+globs = ["GenericCubic", "GenericCubic.+"]
+
+[[lean_lib]]
+name = "Connected"
+globs = ["Connected", "Connected.+"]
+
+[[lean_lib]]
+name = "Challenge"
+globs = ["Challenge", "Challenge.+"]
+
+[[lean_lib]]
+name = "Solution"
+globs = ["Solution", "Solution.+"]
+
+[[lean_lib]]
+name = "UniversalGluing"
+globs = ["UniversalGluing", "UniversalGluing.+"]

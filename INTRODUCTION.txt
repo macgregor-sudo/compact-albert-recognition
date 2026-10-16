@@ -1,0 +1,140 @@
+Finite Observations and Recognition of the Compact Albert Algebra
+Introduction
+
+Near the flat reference data, 54 traces leave exactly two automorphism orbits. For three ordered Jordan frames in the compact real Albert algebra J=H_3(O), the theorem supplies an open neighborhood in a fixed twenty-dimensional chart of trace data. The data are 27 pair traces and 27 triple traces of nine labeled idempotents. One automorphism acts on all nine at once; no frame or idempotent labels are permuted. A degree-nine scalar Phi distinguishes the two orbits by its sign. When Phi is nonzero, the three frame encoders together with the unit generate J. The question is what information survives when an exceptional algebraic configuration is replaced by finitely many invariant numbers. [Selected statements 6, 11–12.]
+
+Recognition asks a complementary question: what warrants using the Albert model in the first place? Two recognition theorems supply answers. The first starts with a normalized cubic and a positive definite metric at its basepoint, together with a tangent equivalence matching the Albert metric and full vector-valued curvature. These hypotheses recover the whole algebra. The second identifies a generated marked copy from a richer finite word table in a less constrained ambient system. The small frame trace list classifies configurations within an established model; the richer table determines the product and pairing on a generated copy. [Selected statements 10, 21.]
+
+1. The configuration and its trace data
+
+Let J=H_3(O), where O is the real division octonion algebra. We use the Jordan product x circle y=(xy+yx)/2, the raw trace T with T(1)=3, and the positive pairing B(x,y)=T(x circle y). Its automorphism group is the compact group F4. This is the standard exceptional Jordan model; the trace and determinant can be expressed through its product. [Baez, The Octonions, §§3.4 and 4.2: https://math.ucr.edu/home/baez/octonions/node12.html and https://math.ucr.edu/home/baez/octonions/node15.html.]
+
+An ordered frame p=(p0,p1,p2) consists of trace-one idempotents, mutually orthogonal for the Jordan product, whose sum is 1. Our configuration is an ordered triple (p,q,r) of such frames, comprising nine labeled idempotents. One automorphism acts simultaneously on all nine. Relabeling either the frames or their elements is not included in this equivalence relation.
+
+Each frame has a convenient encoder x=p2-p0. No frame information is lost: since x^2=p0+p2,
+
+    p0=(x^2-x)/2,   p1=1-x^2,   p2=(x^2+x)/2.
+
+Write y and z for the other two encoders. The full trace list consists of the three 3-by-3 arrays B(pi,qj), B(qj,rk), B(rk,pi), together with the 27 entries T((pi circle qj) circle rk). Thus it has 54 entries. A specified list Q26 of traces in the encoders has the same equality fibers on actual frames. Its six single-encoder entries are fixed, leaving a list Q20 with the same equality fibers. These are claims about the information carried by the lists; Q26 is not a list of 26 algebraically independent frame coordinates. [Selected statements 1, 7.]
+
+2. The missing sign
+
+Set U_x(w)=2x circle(x circle w)-x^2 circle w, and define
+
+    Phi(x,y,z)=B((U_x U_y-U_y U_x)z, U_z(x circle y)).
+
+This polynomial has degree three in each input and total degree nine. Its relation to Glennie's degree-eight vector is explicit: the derivative in the third input is pairing against the normalized vector G defined in §3. [Selected statement 22.] Glennie's paper supplies the classical special-identity context, not the compact-real orbit theorem. McCrimmon gives a convenient vector formula; his introductory and appendix conventions differ by a factor of two. [Glennie, Some Identities Valid in Special Jordan Algebras but Not Valid in All Jordan Algebras, introduction p.47; §2, relation (8) p.56 and degree-eight relation (9) p.57: https://msp.org/pjm/1966/16-1/pjm-v16-n1-p05-p.pdf. McCrimmon, A Taste of Jordan Algebras, §0.1 p.5 and Appendix B, Definition B.5.2 p.469: https://galileoandeinstein.phys.virginia.edu/Elec_Mag/17_7410_Lectures/mccrimmon_jordan.pdf.]
+
+The local theorem supplies an open set V in the fixed twenty-dimensional affine chart of frame trace data, containing the flat reference at which the pair entries are 1/3 and the triple entries are 1/9. For every b in V, the complete fiber of actual ordered frame triples with those data is the disjoint union of exactly two automorphism orbits. There are continuous representatives of the two orbits, with strictly positive and strictly negative Phi respectively. Consequently, equality of the trace list together with equality of the nonzero sign is a complete orbit test on the admitted domain. The quotient there is homeomorphic to V times a two-point set. The theorem covers every frame triple in the admitted fiber, not just the two representatives. It gives an existential neighborhood rather than an explicit radius or the full global image of the trace map. [Selected statements 6, 11, 20.]
+
+A familiar comparison is the Gram matrix of three independent vectors in oriented Euclidean three-space. It determines the square of their determinant; adding the determinant's sign distinguishes the two rotation orbits. The comparison explains the role of a sign, but not the algebra behind this theorem. Phi is cubic in each input, not a scalar triple product or a trilinear volume form. In particular, we use Phi nonzero as a sufficient generation certificate and make no converse claim for the scalar test.
+
+There is also classical invariant-theoretic context. Over an algebraically closed field of characteristic zero, Iltyakov gives a polynomial primary algebra Q and a free-module presentation Q plus Q omega for invariants of three arbitrary Albert elements, with relation omega^2=p+q omega. The closing remark on p.18 describes the corresponding trace-zero case, with the three linear traces omitted. The secondary coordinate needs centering before conjugation becomes sign reversal. This algebraic presentation alone does not determine which real frame data occur or count their compact-real automorphism orbits. [Iltyakov, Research Report 97-4: Proposition 2 pp.9–10, relation (16) p.10 and Corollary 2 p.10; Corollary 3 p.17 and Theorem 2 p.18; closing remark p.18 for trace-zero triples. Report page: https://www.maths.usyd.edu.au/u/ResearchReports/Algebra/Ilt/1997-4.html; primary text: https://www.maths.usyd.edu.au/u/ResearchReports/Algebra/Ilt/1997-4.ps. Page references were checked in retained primary-text extraction; original PostScript page-image confirmation remains limited.]
+
+3. Generation and finite error
+
+For arbitrary x,y,z in J, if Phi(x,y,z) is nonzero, then x,y,z together with the unit generate J under real linear combinations and the Jordan product. Every automorphism fixing them is the identity, and every Jordan derivation annihilating them is zero. Applied to frame encoders, this also proves that the nine frame idempotents generate J. The generation theorem does not require the local frame domain. [Selected statements 4, 12.]
+
+Write K_xy=U_x U_y-U_y U_x and p=x circle y. Use the explicitly normalized triple product
+
+    {a,b,c}=2(a circle(b circle c)+(a circle b)circle c-(a circle c)circle b),
+    G(x,y,z)={K_xy z,z,p}-K_xy(U_z p).
+
+For every x,y,z in J and every ambient direction (a,b,c), the selected derivative theorem gives
+
+    D Phi_(x,y,z)(a,b,c)
+      = B(a,G(y,z,x))+B(b,G(z,x,y))+B(c,G(x,y,z)).
+
+Here B is the raw trace pairing; no factor of 1/3 is absorbed into G. This is the actual Frechet derivative on the full ambient space J^3, not a derivative restricted to frames or to a single input slot. If it is nonzero, every real linear subspace containing 1,x,y,z and closed under the Jordan product equals J. Thus, if the full derivative is nonzero, x,y,z together with the unit generate J. No Phi-nonzero or local-frame premise is required. The converse is outside the selected statements. [Selected statements 22–23; declaration names and source files in formalization.yaml.]
+
+Six specified scalar readings determine Phi: their weighted sum S, with coefficients (4,-4,-1,1,-1,1), equals 2Phi. If each reading has absolute error at most epsilon, the score error is at most 12epsilon. Hence |S_observed|>12epsilon certifies the exact sign and nonvanishing. Input displacement is a separate error model: when both triples lie in the raw B-norm ball of radius R and corresponding inputs differ by at most delta, the scalar displacement allowance is 18R^8 delta. Writing Phi_observed=S_observed/2, the condition |Phi_observed|>6epsilon+18R^8 delta preserves sign and generation. These are real-valued algebraic readings; no instrument or probability model is specified. [Selected statements 2–3, 9, 16.]
+
+On each compact subset of a suitable admitted chart, Phi has a positive uniform absolute margin. The continuous sign branches also give uniform recovery up to simultaneous automorphism from nearby feasible chart coordinates. When |S_observed|>12epsilon, the noisy theorem uses the observed sign to choose the correct branch. The alternative coordinates must still be feasible and lie in the stated compact region; this is not a theorem projecting arbitrary noisy arrays onto the feasible set. [Selected statements 13–15.]
+
+4. Recognizing the model
+
+The geometric entrance starts with a finite-dimensional real normed space E and a cubic N given by a symmetric trilinear form. Choose a basepoint e with N(e)=1. Require g_e=-(1/3)D^2 log N at e to be positive definite on all of E. Here e is fixed: the premise quantifies over vectors in E, not over basepoints. On ker(DN_e), require a linear equivalence with the compact Albert tangent model that preserves g_e and the full vector-valued curvature tensor. The formal statement uses an explicit curvature formula derived from the cubic. Under these hypotheses, the Solution identifies that formula with the curvature in the geometric recognition theorem. The conclusion constructs an equivalence A:E to J preserving the basepoint, cubic, raw trace, pairing and reconstructed product. Its metric normalization is B(Au,Av)=3g_e(u,v). It identifies the metric, ambient connection coefficient and ambient curvature, all at the fixed basepoint e. The same A transports the local two-orbit theorem and, for admitted frame triples, generation, trivial stabilizers and derivation vanishing. The conclusion does not require A to extend the supplied tangent equivalence. [Selected statement 21.]
+
+The word-table entrance assumes much less about the ambient system. Let E be a real inner-product space with a bilinear product j, a distinguished element e, and three marks. Evaluate 27 fixed bracketed words in them. Require exact agreement with the native table of Gram entries, pairings of word products against words, and squared norms of those products in the full ambient space. Then there is a unique isometric, product-preserving marked map from J onto the generated subspace. No ambient Jordan law, dimension 27, commutativity, or global unit law is assumed. Those Albert properties are recovered on the generated copy. [Selected statement 10.]
+
+The full product norms explain why this table suffices. Pairings against the word span determine the projection of a product onto that span, but could miss a perpendicular component. Equality of the full squared norm removes that component by positivity. Thus the richer table determines multiplication, while the small frame trace list serves a different purpose: locating a configuration up to automorphism inside J. The word-table theorem is exact; it makes no stability claim for an approximately matching table.
+
+5. Quantitative obstruction and scope
+
+The score also bounds failure to preserve multiplication under an exact real linear isometry from J into a finite coordinatewise Euclidean algebra. The premise is a uniform relative defect bound on every source pair. A positive observed margin forces a positive lower bound on that defect. A represented-target variant requires an isometric representation into a normed associative algebra, a symmetrized-product identity, and a linear cyclic functional reproducing the inner product. Concrete real symmetric-matrix instances and an unconditional all-special robustness theorem are not part of this release. [Selected statements 17–19.]
+
+The 23 selected statements passed a Linux verification run on 16 October 2026 using Comparator, the default Lean kernel, NanoDa and con-ron. The permitted axioms were propext, Classical.choice and Quot.sound. This release changes only comments in the Lean sources from that run; all non-comment content is unchanged. No new build or checker run is claimed for the revised files. Prose and metadata are outside that proof check. No Palomar acceptance or independent human mathematical review is claimed.
+
+All project exposition and Lean code are AI-generated under Robert MacGregor's direction. No novelty is asserted. Reused and adapted code and third-party dependencies retain their original credits and licenses; see THIRD-PARTY-NOTICES.md in this repository. Robert is a non-mathematician. He plans no conventional journal submission himself and welcomes a mathematician interested in leading further development as primary author. Contact: macgregor@gmail.com.
+
+Numbered citations refer to the 23 selected statements described in THEOREMS.md and recorded in formalization.yaml. The companion unpublished notes treat geometric recognition and local whole-fiber classification as supplied inputs and develop further symbolic consequences. They are not the sole source of every later theorem; each selected statement retains its own source correspondence.
+
+6. Sources, formalization and related work
+
+The selected development combines local classification of labeled frame triples, generation and quantitative estimates, recognition from an exact finite word table, recognition from a supplied tangent metric and full-curvature match, and the full derivative of Phi. The 23 statements are listed individually in THEOREMS.md. Their source is a collection of retained arguments and unpublished notes on compact Albert reconstruction and finite observations, together with the classical ingredients and software reuse identified below. No wholesale formalization of those notes, exhaustive priority assessment, or novelty claim is made. All project exposition and Lean code are AI-generated under Robert MacGregor's direction; the source reviews are AI reviews, not independent human mathematical review.
+
+Classical mathematics used in the development
+
+The model H_3(O), its half Jordan product, raw trace and positive trace pairing are classical. Baez's exposition gives the compact model and its reference automorphism properties [B, §§3.4 and 4.2; arXiv v4 pp.31–32 and 39–40]. The Lean development constructs the needed native algebra, diagonalization and transport maps. The selected statements use explicit product-and-trace automorphisms; they do not select a proof identifying their full abstract group with F4. Baez is credited as an expository source, not as the originator of the Albert algebra.
+
+Glennie's degree-eight special identity is the classical antecedent of the vector polynomial used here [G, §2, relation (8), p.56, and degree-eight relation (9), p.57]. The adopted formula is McCrimmon's introductory convention: the unhalved triple product and final input x circle y [M, §0.1, pp.5–6]. His Appendix B convention uses the two-tad in that slot and differs by a factor of two [M, Definition B.5.2, p.469]. In the package, glennieVector has the introductory normalization. Selected statement 22 proves that the actual full derivative of Phi is the sum of the three cyclic raw-trace pairings with this vector. This credits Glennie's polynomial and McCrimmon's normalization without attributing the project's derivative identity, local compact-real orbit theorem, or generation criterion to those sources.
+
+A concrete supporting classical identity is U_p(q)=B(p,q)p for a trace-one idempotent p. Garibaldi–Petersson–Racine establish the corresponding elementary-idempotent identity in the proof of Proposition 37.2(b); §37.1 supplies their elementary-idempotent definition and Proposition 37.4 treats orthogonal frames [GPR, January 19, 2026 draft, printed pp.362–365]. The native file TraceOneU.lean explicitly credits these passages as proof guidance and derives the identity from the native cubic residual. It assumes trace one and idempotence, not an extra unproved sharp-map condition. Their circle convention and the package's half Jordan product must be translated. This is a supporting identity, not an additional selected headline or a formalization of the entire book.
+
+Software reuse is a separate attribution. Native/CubicJordan.lean adapts the general cubic-characteristic-identity implication from the earlier public split-Albert project at commit dd06ef5d423a0e4a5d814d2c221e999b98887ee1 [SW]. It changes rational to real scalars and the module interface. The native compact cubic identity is proved separately; no split invariant-field theorem is transferred by this reuse. Lean, Mathlib and the locked dependencies retain their own credits and licenses.
+
+Classification and cubic reconstruction: related classical results
+
+Jordan, von Neumann and Wigner classified finite-dimensional formally real Jordan algebras. McCrimmon states the classification at [M, §1.11, p.49], citing their 1934 paper [JvNW]. It supports a conceptual explanation of why a proper compact Albert subalgebra cannot exhibit the relevant exceptional behavior. The inspected Lean generation proof instead uses actual simultaneous pair reduction, the reduced Phi formula and coordinate-span arguments in NativeGenerationEndpointR01.lean. It does not invoke that classification as a proof shortcut. The original 1934 paper is credited historically; the checked statement here is McCrimmon's account, not a new audit of the original proof.
+
+Shirshov–Cohn says that a Jordan algebra generated by two elements is special; see [M, Theorem II.5.1.3, p.200, and Theorem B.4.3, p.468]. This is relevant background to generator counts. It does not by itself place an arbitrary compact Albert pair in the particular native complex sector required by the formal proof. The package proves that reduction explicitly. Neither a general Shirshov–Cohn theorem nor a minimum-generator theorem is one of the 23 selected statements.
+
+Springer's construction reconstructs a Jordan product from a suitable based cubic. The explicit assumptions include a nondegenerate trace form and the adjoint identity; see Tkachev [T, Definition 2.1 and Proposition 2.1, pp.5–6], following Springer [S] and McCrimmon [M, II.4.2–4.3]. These are classical antecedents of cubic-to-product reconstruction. The package proves its needed identities and transport maps for the actual normalized cubic and compact model. The source correspondence does not justify calling the selected curvature-recognition theorem a formalization of Springer, McCrimmon or Tkachev: their cited hypotheses and conclusions are different. Springer is cited through this explicit source chain; his original article was not independently reread for this revision.
+
+Iltyakov and the scope of the trace invariants
+
+Iltyakov studies polynomial invariants of three Albert elements over an algebraically closed field of characteristic zero [I]. Proposition 2 and relation (16), pp.9–10, give a quadratic relation of the form omega^2=p+q omega over the primary algebra. Corollary 3 and Theorem 2, pp.17–18, give the rank-two module presentation. The closing remark on p.18 treats trace-zero inputs after removing the three linear traces. This is a substantial classical antecedent for the role of an additional invariant. It is distinct from a count of complete compact-real frame orbits over each datum in an open real neighborhood. No selected statement asserts the entire Iltyakov invariant-ring presentation, identifies Phi with his omega, or turns the quadratic relation into a global compact-real orbit theorem. The citation uses the preserved primary-text extraction; original PostScript page-image confirmation remains an explicitly recorded limitation.
+
+Cubic geometry and the curvature-recognition theorem
+
+The forward curvature relation between a cubic and commutators of its raised multiplication operators has classical antecedents. Amari–Armstrong give the Hessian-curvature identity [AA, Proposition 1, p.4, equation (1)]. Lindemann gives the unit-level projective-special-real formula [L, Lemma 3.11, p.21, equations (3.35)–(3.37)]. The retained source comparison translates the scale and sign conventions; the level-set formula has a fixed metric-wedge term in addition to the cubic commutator. In the package, LeviCivitaCurvature.chartCurvature_zero proves the actual geometric formula, rather than assuming that desired formula as the definition of curvature.
+
+The inverse step has a different burden. The Lean proof passes through the native reference Jacobi-kernel line and the unrestricted quadratic-curvature fiber, then reconstructs the full normalized cubic using its unit/tangent decomposition. RecognitionFromCurvature.lean consumes the supplied tangent metric and full vector-valued curvature equivalence and constructs a whole-space norm/unit equivalence, correcting a possible tangent sign. The resulting ambient equivalence need not extend the initially supplied tangent map. This argument is drawn from unpublished notes on Albert curvature recognition and proved in the package; no classical paper listed here is being credited with this exact one-point inverse theorem solely because it concerns Jordan geometry.
+
+Related geometric recognition theorems must retain their hypotheses. Hildebrand relates Hessian potentials with parallel third derivative to metrized Jordan algebras [Hi, Lemma 3.3 and Theorem 3.9]; further first-derivative parallelism and convexity enter his symmetric-cone result [Hi, Theorem 5.8]. Li–Zhao's exceptional affine-symmetric case restricts to invariant Fubini–Pick forms [LZ, Definition 2.2, equation (4.1), Lemma 4.1 and Proposition 4.2]. Naitoh's Jordan construction uses parallel-submanifold hypotheses and the resulting invariance [N, Part II, Lemma 6.1 and equation (6.7), p.121; Theorem 6.3, p.123]. These are useful comparisons, not imported proofs that an unrestricted positive cubic is recognized by the single full-curvature match in selected statement 21. Their global or neighborhood-wide hypotheses must not be silently replaced by pointwise ones.
+
+Exact finite-word recognition and boundaries
+
+The selected Albert word-table theorem uses its fixed 27 reference words and three exact scalar-data families: Gram entries, product-word pairings and full ambient product squared norms. The last family rules out components perpendicular to the word span. Its unique marked embedding is proved from that finite table.
+
+Broader symbolic work remains separately attributed. General invariant-ring identifications, global realized-primary fibers, bundle/readout topology, and a converse to the derivative-generation implication are not among the 23 selected statements. The selected quotient theorem is local, and the selected derivative-generation theorem is a forward implication. Work on homogeneous cones, parallel cubic forms or physical interpretations is not evidence that these broader claims were formalized. The bibliography records relevant mathematics, not a list of theorem dependencies or a priority claim.
+
+References and checked locators
+
+[B] John C. Baez, The Octonions, Bulletin of the American Mathematical Society 39 (2002), 145–205. https://doi.org/10.1090/S0273-0979-01-00934-X . Author-hosted §§3.4 and 4.2: https://math.ucr.edu/home/baez/octonions/node12.html and https://math.ucr.edu/home/baez/octonions/node15.html . Retained arXiv:math/0105155v4: pp.31–32 and 39–40.
+
+[G] Charles M. Glennie, Some Identities Valid in Special Jordan Algebras but Not Valid in All Jordan Algebras, Pacific Journal of Mathematics 16 (1966), 47–59. Introduction p.47; §2, relation (8), p.56, and degree-eight relation (9), p.57. https://msp.org/pjm/1966/16-1/pjm-v16-n1-p05-p.pdf
+
+[M] Kevin McCrimmon, A Taste of Jordan Algebras, Springer, 2004. §0.1, pp.5–6; §1.11, p.49; II.4.2–4.3; II.5.1.3, p.200; B.4.3, p.468; B.5.2, p.469. https://doi.org/10.1007/b97489 . Checked institutional copy: https://galileoandeinstein.phys.virginia.edu/Elec_Mag/17_7410_Lectures/mccrimmon_jordan.pdf
+
+[GPR] Skip Garibaldi, Holger P. Petersson and Michel L. Racine, Albert Algebras over Commutative Rings: The Last Frontier of Jordan Systems. Author draft dated January 19, 2026: §37.1 and Proposition 37.2(b), printed pp.362–363; Proposition 37.4, pp.364–365. https://garibaldibros.com/linked-files/GPR-draft.pdf . Locators refer to that retained edition, not an assumed unchanged current download. No book text is distributed with this package.
+
+[SW] Rational invariants of three frames in the split Albert algebra, AlbertLean/CubicJordan.lean, commit dd06ef5d423a0e4a5d814d2c221e999b98887ee1, Apache-2.0. https://github.com/macgregor-sudo/albert-frame-triple-invariants/blob/dd06ef5d423a0e4a5d814d2c221e999b98887ee1/AlbertLean/CubicJordan.lean . Exact adaptation and license information are in THIRD-PARTY-NOTICES.md; no separate individual source-file author is inferred.
+
+[JvNW] Pascual Jordan, John von Neumann and Eugene Wigner, On an Algebraic Generalization of the Quantum Mechanical Formalism, Annals of Mathematics (2) 35(1) (1934), 29–64. Historical credit; the classification statement used for comparison was checked in [M, p.49].
+
+[S] Tonny A. Springer, On a Class of Jordan Algebras, Proceedings of the Koninklijke Nederlandse Akademie van Wetenschappen, Series A 62 = Indagationes Mathematicae 21 (1959), 254–264. Historical attribution through [T, §2 and reference 18]; not a fresh original-paper audit.
+
+[T] Vladimir G. Tkachev, A Jordan Algebra Approach to the Cubic Eiconal Equation, Journal of Algebra 419 (2014). Definition 2.1 and Proposition 2.1, arXiv preprint pp.5–6. https://doi.org/10.1016/j.jalgebra.2014.06.039 ; https://arxiv.org/pdf/1211.7223v2
+
+[I] Alexander V. Iltyakov, On Generators of the Algebra of Polynomial Invariants of Group F_4, University of Sydney Research Report 97-4, February 3, 1997. Proposition 2 and (16), pp.9–10; Corollary 2, p.10; Corollary 3 and Theorem 2, pp.17–18; closing trace-zero remark, p.18. https://www.maths.usyd.edu.au/u/ResearchReports/Algebra/Ilt/1997-4.html . This is Report 97-4, not the distinct Laplace Operator and Polynomial Invariants report.
+
+[AA] Shun-ichi Amari and John Armstrong, Curvature of Hessian Manifolds, arXiv:1312.1103v1, Proposition 1, p.4, equation (1). https://arxiv.org/pdf/1312.1103v1
+
+[L] David Lindemann, Properties of the Moduli Set of Complete Connected Projective Special Real Manifolds, arXiv:1907.06791v1. Lemma 3.11, p.21, equations (3.35)–(3.37). https://arxiv.org/pdf/1907.06791v1
+
+[Hi] Roland Hildebrand, Hessian Potentials with Parallel Derivatives, PDF labeled arXiv:1303.7366v1. Lemma 3.3, p.3; Theorem 3.9, p.6; Theorem 5.8, p.10. https://arxiv.org/pdf/1303.7366v1
+
+[LZ] Xingxiao Li and Guosong Zhao, On the Equiaffine Symmetric Hyperspheres, arXiv:1408.4317v1. Definition 2.2, p.5; equation (4.1), Lemma 4.1 and Proposition 4.2, pp.16–17. https://arxiv.org/pdf/1408.4317v1
+
+[N] Hiroo Naitoh, Parallel Submanifolds of Complex Space Forms II, Nagoya Mathematical Journal 91 (1983), 119–149. Publisher PDF: Lemma 6.1 and equation (6.7), printed p.121; Theorem 6.3, printed p.123. https://doi.org/10.1017/S002776300002047X

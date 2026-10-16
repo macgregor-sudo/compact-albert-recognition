@@ -1,0 +1,35 @@
+{
+  "challenge_module": "Challenge.R05Combined23Candidate",
+  "solution_module": "Solution.R05DerivativeExtension",
+  "theorem_names": [
+    "Glennie.SubmissionR03.q26_eq_iff_fullLedger_eq",
+    "Glennie.SubmissionR03.division_free",
+    "Glennie.SubmissionR03.score_eq_two_phi",
+    "Glennie.SubmissionR03.atoms_generate_of_score",
+    "Glennie.SubmissionR03.nearby_sign_rigidity",
+    "Glennie.SubmissionR03.nearby_fibres_two_orbits",
+    "Glennie.SubmissionR03.q20_eq_iff_fullLedger_eq",
+    "Glennie.SubmissionR03.near_flat_scalar_margin",
+    "Glennie.SubmissionR03.signed_readout_margin",
+    "Glennie.SubmissionR03.finite_word_marked_recognition",
+    "Glennie.SubmissionR03.local_q26_score_orbit_test",
+    "Glennie.SubmissionR03.phi_nonzero_generation_stabilizer",
+    "Glennie.SubmissionR03.compact_local_phi_margin",
+    "Glennie.SubmissionR03.compact_feasible_element_recovery",
+    "Glennie.SubmissionR03.compact_noisy_feasible_element_recovery",
+    "Glennie.SubmissionR03.six_readout_displaced_generation",
+    "Glennie.SubmissionR03.diagonalN_defect_response_radius",
+    "Glennie.SubmissionR03.frame_noisy_diagonalN_defect_lower",
+    "Glennie.SubmissionR03.frame_noisy_represented_defect_lower",
+    "Glennie.SubmissionR04Quotient.admitted_orbit_quotient_homeomorph",
+    "Glennie.SubmissionR04Intrinsic.intrinsic_local_reconstruction",
+    "Glennie.Compact.GlennieFullDerivativeR01.hasFDerivAt_phiTriple",
+    "Glennie.Compact.GlennieFullDerivativeR01.eq_top_of_fderiv_phiTriple_ne_zero"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
